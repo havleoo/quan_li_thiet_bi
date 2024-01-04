@@ -14,10 +14,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Hai
- */
+
 public class MainFrame extends javax.swing.JFrame {
 
     /**
@@ -26,10 +23,12 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         initComponents();
         setTitle("QUẢN LÝ THIẾT BỊ");
-        
+        List<DanhMucBean> listDanhMuc = new ArrayList<>();
+        listDanhMuc.add(new DanhMucBean("ThongKe", ThongKeBtn, jlbThongKe));
         MainController controller = new MainController(jpnBean, this);
         controller.setView(Home, jblTrangChu, "TrangChu");
-      
+        controller.setEvent(listDanhMuc);
+        
         // confirm de thuc hien dong
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.addWindowListener(new WindowAdapter() {

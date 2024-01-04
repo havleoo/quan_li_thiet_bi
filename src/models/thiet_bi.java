@@ -15,6 +15,7 @@ public class thiet_bi {
     private String tenTB;
     private String trangThai;
     private Date ngayThem;
+    private int id;
 
     public String getMaTB() {
         return maTB;
@@ -48,4 +49,11 @@ public class thiet_bi {
         this.ngayThem = ngayThem;
     }
     
+      public int getid() {
+        return id;
+    }
+
+    public void setid(int id) {
+        this.id = id;
+    }
 }
