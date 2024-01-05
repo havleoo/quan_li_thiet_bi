@@ -24,7 +24,9 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         setTitle("QUẢN LÝ THIẾT BỊ");
         List<DanhMucBean> listDanhMuc = new ArrayList<>();
+        listDanhMuc.add(new DanhMucBean("ThoiKhoaBieu", ThoiKhoaBieuBtn, jlbThoiKhoaBieu));
         listDanhMuc.add(new DanhMucBean("ThongKe", ThongKeBtn, jlbThongKe));
+        
         MainController controller = new MainController(jpnBean, this);
         controller.setView(Home, jblTrangChu, "TrangChu");
         controller.setEvent(listDanhMuc);
@@ -56,8 +58,8 @@ public class MainFrame extends javax.swing.JFrame {
         jblTrangChu = new javax.swing.JLabel();
         NhanKhauBtn = new javax.swing.JPanel();
         jlbNhanKhau = new javax.swing.JLabel();
-        HoKhauBtn = new javax.swing.JPanel();
-        jlbHoKhau = new javax.swing.JLabel();
+        ThoiKhoaBieuBtn = new javax.swing.JPanel();
+        jlbThoiKhoaBieu = new javax.swing.JLabel();
         ThongKeBtn = new javax.swing.JPanel();
         jlbThongKe = new javax.swing.JLabel();
         jpnBean = new javax.swing.JPanel();
@@ -117,27 +119,27 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        HoKhauBtn.setBackground(new java.awt.Color(102, 102, 102));
+        ThoiKhoaBieuBtn.setBackground(new java.awt.Color(102, 102, 102));
 
-        jlbHoKhau.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jlbHoKhau.setForeground(new java.awt.Color(255, 255, 255));
-        jlbHoKhau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/home.png"))); // NOI18N
-        jlbHoKhau.setText("Thời Khóa Biểu");
+        jlbThoiKhoaBieu.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jlbThoiKhoaBieu.setForeground(new java.awt.Color(255, 255, 255));
+        jlbThoiKhoaBieu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/home.png"))); // NOI18N
+        jlbThoiKhoaBieu.setText("Thời Khóa Biểu");
 
-        javax.swing.GroupLayout HoKhauBtnLayout = new javax.swing.GroupLayout(HoKhauBtn);
-        HoKhauBtn.setLayout(HoKhauBtnLayout);
-        HoKhauBtnLayout.setHorizontalGroup(
-            HoKhauBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HoKhauBtnLayout.createSequentialGroup()
+        javax.swing.GroupLayout ThoiKhoaBieuBtnLayout = new javax.swing.GroupLayout(ThoiKhoaBieuBtn);
+        ThoiKhoaBieuBtn.setLayout(ThoiKhoaBieuBtnLayout);
+        ThoiKhoaBieuBtnLayout.setHorizontalGroup(
+            ThoiKhoaBieuBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThoiKhoaBieuBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlbHoKhau)
+                .addComponent(jlbThoiKhoaBieu)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
-        HoKhauBtnLayout.setVerticalGroup(
-            HoKhauBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HoKhauBtnLayout.createSequentialGroup()
+        ThoiKhoaBieuBtnLayout.setVerticalGroup(
+            ThoiKhoaBieuBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThoiKhoaBieuBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlbHoKhau)
+                .addComponent(jlbThoiKhoaBieu)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -174,7 +176,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jpnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(NhanKhauBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(HoKhauBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ThoiKhoaBieuBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ThongKeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jpnMenuLayout.setVerticalGroup(
@@ -184,7 +186,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(NhanKhauBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(HoKhauBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ThoiKhoaBieuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ThongKeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 219, Short.MAX_VALUE))
@@ -198,7 +200,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
         jpnBeanLayout.setVerticalGroup(
             jpnBeanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 481, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jpnContainerLayout = new javax.swing.GroupLayout(jpnContainer);
@@ -235,13 +237,13 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel HoKhauBtn;
     private javax.swing.JPanel Home;
     private javax.swing.JPanel NhanKhauBtn;
+    private javax.swing.JPanel ThoiKhoaBieuBtn;
     private javax.swing.JPanel ThongKeBtn;
     private javax.swing.JLabel jblTrangChu;
-    private javax.swing.JLabel jlbHoKhau;
     private javax.swing.JLabel jlbNhanKhau;
+    private javax.swing.JLabel jlbThoiKhoaBieu;
     private javax.swing.JLabel jlbThongKe;
     private javax.swing.JPanel jpnBean;
     private javax.swing.JPanel jpnContainer;
