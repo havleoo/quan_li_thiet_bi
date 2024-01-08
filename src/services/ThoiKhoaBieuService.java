@@ -51,7 +51,7 @@ public class ThoiKhoaBieuService {
     return list;
     
 }
-    
+
     //tim kiem
     public List<ThoiKhoaBieuBean> search(String key){
         List<ThoiKhoaBieuBean> list = new ArrayList<>();

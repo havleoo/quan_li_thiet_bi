@@ -107,6 +107,7 @@ public class MainController {
                 case "TrangChu":
                     view = new HomePagePanel();
                     break;
+
                 case "ThoiKhoaBieu":
                     view = new ThoiKhoaBieuManagePanel(this.jfrMain);
                     break;

@@ -1,3 +1,4 @@
+
     package Bean;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class ThietBiBean {
                 + "<p>Trạng thái: <b>" + thiet_bi_model.getTrangThai() + "</p>"
                 + "<p>Ngày thêm: <b>" + thiet_bi_model.getNgayThem()+ "</p>";
         res +=  "</table></div></html>";
+
         return res;
     }
 }

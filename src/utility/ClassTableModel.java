@@ -9,6 +9,7 @@ import models.thiet_bi;
 public class ClassTableModel {
     // bang cho main frame
     public DefaultTableModel setTableThietBi(List<thiet_bi> listItem, String[] listColumn) {
+
         final int columns = listColumn.length;
         DefaultTableModel dtm = new DefaultTableModel()  {
             @Override
