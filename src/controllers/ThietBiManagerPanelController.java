@@ -107,8 +107,8 @@ public class ThietBiManagerPanelController {
 //                JOptionPane.showConfirmDialog(null, table.getSelectedRow());
                 if (e.getClickCount() > 1) {
                     ThietBiBean temp = listThietBiBeans.get(table.getSelectedRow());
-                    ThietBiBean info = ThietBiService.getThietBi(temp.getthiet_bi().getMaTB());
-                    InfoJframe infoJframe = new InfoJframe(info.toString(), parentJFrame);
+             
+                    InfoJframe infoJframe = new InfoJframe(temp.toString(), parentJFrame);
                     infoJframe.setLocationRelativeTo(null);
                     infoJframe.setVisible(true);
                 }

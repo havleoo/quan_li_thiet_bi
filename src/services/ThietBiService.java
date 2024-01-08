@@ -19,7 +19,7 @@ public class ThietBiService {
             String query = "SELECT * FROM thiet_bi WHERE MaTB = ?" + MaTB;
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
-            int id = -1;
+            
             while (rs.next()){
                 thiet_bi thiet_bi = ThietBiBean.getthiet_bi();
                 thiet_bi.setMaTB(rs.getString("MaTB"));
@@ -35,7 +35,7 @@ public class ThietBiService {
         return ThietBiBean;
     } 
     
-    public List<ThietBiBean> getListThietBi() {
+public List<ThietBiBean> getListThietBi() {
         List<ThietBiBean> list = new ArrayList<>();
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
@@ -60,7 +60,7 @@ public class ThietBiService {
         return list;
     }
      
-       public List<ThietBiBean> statisticThietBi(String TrangThai) {
+public List<ThietBiBean> statisticThietBi(String TrangThai) {
         List<ThietBiBean> list = new ArrayList<>();
         
         String query = "SELECT * FROM thiet_bi ";
@@ -72,7 +72,6 @@ public class ThietBiService {
             Connection connection = MysqlConnection.getMysqlConnection();
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
-            int id = -1;
             while (rs.next()){
                 ThietBiBean  ThietBiBean = new ThietBiBean();
                 thiet_bi thiet_bi = ThietBiBean.getthiet_bi();
@@ -80,7 +79,6 @@ public class ThietBiService {
                 thiet_bi.setTenTB(rs.getString("TenTB"));
                 thiet_bi.setTrangThai(rs.getString("TrangThai"));
                 thiet_bi.setNgayThem(rs.getDate("NgayThem"));
-                id = rs.getInt("id");
                 
                 list.add(ThietBiBean);
             }
@@ -130,7 +128,6 @@ public class ThietBiService {
                 thiet_bi.setTenTB(rs.getString("TenTB"));
                 thiet_bi.setTrangThai(rs.getString("TrangThai"));
                 thiet_bi.setNgayThem(rs.getDate("NgayThem"));
-    
                 list.add(temp);
             }
             preparedStatement.close();
