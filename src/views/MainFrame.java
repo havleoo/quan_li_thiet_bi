@@ -25,6 +25,7 @@ public class MainFrame extends javax.swing.JFrame {
         setTitle("QUẢN LÝ THIẾT BỊ");
         List<DanhMucBean> listDanhMuc = new ArrayList<>();
         listDanhMuc.add(new DanhMucBean("TrangChu", Home, jblTrangChu));
+        listDanhMuc.add(new DanhMucBean("ThietBi", ThietBiBtn, jlbThietBi));
         listDanhMuc.add(new DanhMucBean("ThoiKhoaBieu", ThoiKhoaBieuBtn, jlbThoiKhoaBieu));
         listDanhMuc.add(new DanhMucBean("ThongKe", ThongKeBtn, jlbThongKe));
         
@@ -57,12 +58,12 @@ public class MainFrame extends javax.swing.JFrame {
         jpnMenu = new javax.swing.JPanel();
         Home = new javax.swing.JPanel();
         jblTrangChu = new javax.swing.JLabel();
-        NhanKhauBtn = new javax.swing.JPanel();
-        jlbNhanKhau = new javax.swing.JLabel();
         ThoiKhoaBieuBtn = new javax.swing.JPanel();
         jlbThoiKhoaBieu = new javax.swing.JLabel();
         ThongKeBtn = new javax.swing.JPanel();
         jlbThongKe = new javax.swing.JLabel();
+        ThietBiBtn = new javax.swing.JPanel();
+        jlbThietBi = new javax.swing.JLabel();
         jpnBean = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,31 +94,6 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(jblTrangChu)
                 .addGap(21, 21, 21))
-        );
-
-        NhanKhauBtn.setBackground(new java.awt.Color(102, 102, 102));
-        NhanKhauBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jlbNhanKhau.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jlbNhanKhau.setForeground(new java.awt.Color(255, 255, 255));
-        jlbNhanKhau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/multiple-users-silhouette.png"))); // NOI18N
-        jlbNhanKhau.setText("Thiết Bị");
-
-        javax.swing.GroupLayout NhanKhauBtnLayout = new javax.swing.GroupLayout(NhanKhauBtn);
-        NhanKhauBtn.setLayout(NhanKhauBtnLayout);
-        NhanKhauBtnLayout.setHorizontalGroup(
-            NhanKhauBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(NhanKhauBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jlbNhanKhau)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        NhanKhauBtnLayout.setVerticalGroup(
-            NhanKhauBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NhanKhauBtnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jlbNhanKhau)
-                .addContainerGap())
         );
 
         ThoiKhoaBieuBtn.setBackground(new java.awt.Color(102, 102, 102));
@@ -168,6 +144,31 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        ThietBiBtn.setBackground(new java.awt.Color(102, 102, 102));
+        ThietBiBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jlbThietBi.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jlbThietBi.setForeground(new java.awt.Color(255, 255, 255));
+        jlbThietBi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/multiple-users-silhouette.png"))); // NOI18N
+        jlbThietBi.setText("Thiết Bị");
+
+        javax.swing.GroupLayout ThietBiBtnLayout = new javax.swing.GroupLayout(ThietBiBtn);
+        ThietBiBtn.setLayout(ThietBiBtnLayout);
+        ThietBiBtnLayout.setHorizontalGroup(
+            ThietBiBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThietBiBtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbThietBi)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ThietBiBtnLayout.setVerticalGroup(
+            ThietBiBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThietBiBtnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlbThietBi)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jpnMenuLayout = new javax.swing.GroupLayout(jpnMenu);
         jpnMenu.setLayout(jpnMenuLayout);
         jpnMenuLayout.setHorizontalGroup(
@@ -176,16 +177,16 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jpnMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NhanKhauBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ThoiKhoaBieuBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ThongKeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(ThongKeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ThietBiBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jpnMenuLayout.setVerticalGroup(
             jpnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnMenuLayout.createSequentialGroup()
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
-                .addComponent(NhanKhauBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ThietBiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ThoiKhoaBieuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -239,11 +240,11 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Home;
-    private javax.swing.JPanel NhanKhauBtn;
+    private javax.swing.JPanel ThietBiBtn;
     private javax.swing.JPanel ThoiKhoaBieuBtn;
     private javax.swing.JPanel ThongKeBtn;
     private javax.swing.JLabel jblTrangChu;
-    private javax.swing.JLabel jlbNhanKhau;
+    private javax.swing.JLabel jlbThietBi;
     private javax.swing.JLabel jlbThoiKhoaBieu;
     private javax.swing.JLabel jlbThongKe;
     private javax.swing.JPanel jpnBean;

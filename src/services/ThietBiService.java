@@ -16,20 +16,16 @@ public class ThietBiService {
         // truy cap db
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
-            String query = "SELECT * FROM thiet_bi WHERE MaTB = " + MaTB;
+            String query = "SELECT * FROM thiet_bi WHERE MaTB = ?" + MaTB;
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             int id = -1;
             while (rs.next()){
                 thiet_bi thiet_bi = ThietBiBean.getthiet_bi();
-                id = rs.getInt("id");
-                thiet_bi.setid(rs.getInt("ID"));
                 thiet_bi.setMaTB(rs.getString("MaTB"));
                 thiet_bi.setTenTB(rs.getString("TenTB"));
                 thiet_bi.setTrangThai(rs.getString("TrangThai"));
                 thiet_bi.setNgayThem(rs.getDate("NgayThem"));
-                
-                
             }
             preparedStatement.close();
             connection.close();
@@ -49,7 +45,6 @@ public class ThietBiService {
             while (rs.next()){
                 ThietBiBean ThietBiBean = new ThietBiBean();
                 thiet_bi thiet_bi = ThietBiBean.getthiet_bi();
-                thiet_bi.setid(rs.getInt("ID"));
                 thiet_bi.setMaTB(rs.getString("MaTB"));
                 thiet_bi.setTenTB(rs.getString("TenTB"));
                 thiet_bi.setTrangThai(rs.getString("TrangThai"));
@@ -81,7 +76,6 @@ public class ThietBiService {
             while (rs.next()){
                 ThietBiBean  ThietBiBean = new ThietBiBean();
                 thiet_bi thiet_bi = ThietBiBean.getthiet_bi();
-                thiet_bi.setid(rs.getInt("ID"));
                 thiet_bi.setMaTB(rs.getString("MaTB"));
                 thiet_bi.setTenTB(rs.getString("TenTB"));
                 thiet_bi.setTrangThai(rs.getString("TrangThai"));
@@ -132,7 +126,6 @@ public class ThietBiService {
             while (rs.next()){
                 ThietBiBean temp = new ThietBiBean();
                 thiet_bi thiet_bi = temp.getthiet_bi();
-                thiet_bi.setid(rs.getInt("ID"));
                 thiet_bi.setMaTB(rs.getString("MaTB"));
                 thiet_bi.setTenTB(rs.getString("TenTB"));
                 thiet_bi.setTrangThai(rs.getString("TrangThai"));

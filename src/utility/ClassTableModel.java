@@ -17,7 +17,7 @@ public class ClassTableModel {
             }
             @Override
             public Class<?> getColumnClass(int columnIndex) {
-                return columnIndex == 4 ? Boolean.class : String.class;
+                return columnIndex == 5 ? Boolean.class : String.class;
             }
         };
         dtm.setColumnIdentifiers(listColumn);

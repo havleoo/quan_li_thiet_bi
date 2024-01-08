@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import views.HomePagePanel;
 import views.ThongKePanel;
 import views.ThoiKhoaBieuManagePanel;
+import views.ThietBiManagePanel;
 
 /**
  *
@@ -40,9 +41,13 @@ public class MainController {
         jlbItem.setBackground(new Color(0));
         JPanel view = new  JPanel();
         switch(kind) {
+                
                 case "TrangChu":
                     view = new HomePagePanel();
-                    break;    
+                    break;  
+                case "ThietBi":
+                    view = new ThietBiManagePanel(this.jfrMain);
+                    break;   
                 case "ThoiKhoaBieu":
                     view = new ThoiKhoaBieuManagePanel(this.jfrMain);
                     break;
@@ -107,7 +112,9 @@ public class MainController {
                 case "TrangChu":
                     view = new HomePagePanel();
                     break;
-
+                case "ThietBi":
+                    view = new ThietBiManagePanel(this.jfrMain);
+                    break;  
                 case "ThoiKhoaBieu":
                     view = new ThoiKhoaBieuManagePanel(this.jfrMain);
                     break;
