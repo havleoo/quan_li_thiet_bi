@@ -59,7 +59,7 @@ public class ThongKePanelController {
             listItem.add(thiet_bi.getthiet_bi());
         });
         
-        DefaultTableModel model = classTableModel.setTableNhanKhau(listItem, COLUMNS);
+        DefaultTableModel model = classTableModel.setTableThietBi(listItem, COLUMNS);
         JTable table = new JTable(model);
         
         // thiet ke bang
