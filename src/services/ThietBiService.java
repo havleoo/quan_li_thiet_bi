@@ -65,12 +65,14 @@ public class ThietBiService {
         return list;
     }
      
-       public List<ThietBiBean> statisticThietBi() {
+       public List<ThietBiBean> statisticThietBi(String TrangThai) {
         List<ThietBiBean> list = new ArrayList<>();
         
         String query = "SELECT * FROM thiet_bi ";
-                    
-        query += " ORDER BY MaTB DESC";
+        if (!TrangThai.equalsIgnoreCase("Toan Bo")) {
+            query += " WHERE thiet_bi.TrangThai = '" + TrangThai + "'";
+        }          
+        query += " ORDER BY MaTB ";
          try {
             Connection connection = MysqlConnection.getMysqlConnection();
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);

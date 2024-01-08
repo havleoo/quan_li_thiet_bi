@@ -13,6 +13,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import views.HomePagePanel;
 import views.ThongKePanel;
 import views.ThoiKhoaBieuManagePanel;
 
@@ -39,6 +40,9 @@ public class MainController {
         jlbItem.setBackground(new Color(0));
         JPanel view = new  JPanel();
         switch(kind) {
+                case "TrangChu":
+                    view = new HomePagePanel();
+                    break;    
                 case "ThoiKhoaBieu":
                     view = new ThoiKhoaBieuManagePanel(this.jfrMain);
                     break;
@@ -100,6 +104,9 @@ public class MainController {
         @Override
         public void mouseClicked(MouseEvent e) {
             switch(kind) {
+                case "TrangChu":
+                    view = new HomePagePanel();
+                    break;
                 case "ThoiKhoaBieu":
                     view = new ThoiKhoaBieuManagePanel(this.jfrMain);
                     break;

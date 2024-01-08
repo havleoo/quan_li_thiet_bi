@@ -51,4 +51,44 @@ public class ThoiKhoaBieuService {
     return list;
     
 }
+    
+    //tim kiem
+    public List<ThoiKhoaBieuBean> search(String key){
+        List<ThoiKhoaBieuBean> list = new ArrayList<>();
+        try{
+            Connection connection = MysqlConnection.getMysqlConnection();
+            String query = "SELECT * "
+                    + "FROM tkb "
+                    + "INNER JOIN giang_vien "
+                    + "ON tkb.MaGV = giang_vien.MaGV "
+                    + "WHERE MaLop like '%" 
+                    + key
+                    +"%'";
+            PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                ThoiKhoaBieuBean temp = new ThoiKhoaBieuBean();
+                tkb tkb = temp.gettkb();
+                tkb.setMaLop(rs.getString("MaLop"));
+                tkb.setTenMon(rs.getString("TenMon"));
+                tkb.setMaMon(rs.getString("MaMon"));
+                tkb.setTgBatDau(rs.getTimestamp("TGBatDau"));
+                tkb.setTgKetThuc(rs.getTimestamp("TGKetThuc"));
+                tkb.setMaGV(rs.getString("MaGV"));
+                gvien gvien = temp.getGvien();
+                gvien.setMaGV(rs.getString("MaGV"));
+                gvien.setHoTen(rs.getString("HoTen"));
+                gvien.setNgaySinh(rs.getTimestamp("NgaySinh"));
+                gvien.setGioiTinh(rs.getString("GioiTinh"));
+                gvien.setEmail(rs.getString("Email"));
+                list.add(temp);
+            }
+            preparedStatement.close();
+            connection.close();
+        }
+    catch (Exception e) {
+            System.out.println(e.getMessage());
+    }
+        return list;
+    }
 }

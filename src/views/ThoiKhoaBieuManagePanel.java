@@ -1,4 +1,4 @@
-
+    
 package views;
 
 import controllers.ThoiKhoaBieuPanelController;
@@ -13,7 +13,7 @@ public class ThoiKhoaBieuManagePanel extends javax.swing.JPanel {
     public ThoiKhoaBieuManagePanel(JFrame parentFrame) {
         this.parentFrame = parentFrame;
         initComponents();
-        controller = new ThoiKhoaBieuPanelController(tableJpn);
+        controller = new ThoiKhoaBieuPanelController(jtfSearch,tableJpn);
         controller.setParentJFrame(parentFrame);
     }
     
@@ -24,6 +24,7 @@ public class ThoiKhoaBieuManagePanel extends javax.swing.JPanel {
     private void initComponents() {
 
         tableJpn = new javax.swing.JPanel();
+        jtfSearch = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -38,6 +39,13 @@ public class ThoiKhoaBieuManagePanel extends javax.swing.JPanel {
             .addGap(0, 389, Short.MAX_VALUE)
         );
 
+        jtfSearch.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jtfSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfSearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -45,18 +53,29 @@ public class ThoiKhoaBieuManagePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(tableJpn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(144, 144, 144))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jtfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
+                .addGap(34, 34, 34)
+                .addComponent(jtfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tableJpn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtfSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfSearchActionPerformed
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField jtfSearch;
     private javax.swing.JPanel tableJpn;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,6 +24,7 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         setTitle("QUẢN LÝ THIẾT BỊ");
         List<DanhMucBean> listDanhMuc = new ArrayList<>();
+        listDanhMuc.add(new DanhMucBean("TrangChu", Home, jblTrangChu));
         listDanhMuc.add(new DanhMucBean("ThoiKhoaBieu", ThoiKhoaBieuBtn, jlbThoiKhoaBieu));
         listDanhMuc.add(new DanhMucBean("ThongKe", ThongKeBtn, jlbThongKe));
         

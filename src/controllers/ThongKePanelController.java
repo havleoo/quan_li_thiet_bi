@@ -23,14 +23,15 @@ import utility.ClassTableModel;
 
 
 public class ThongKePanelController {
-
+    private JComboBox TrangThaiJcb;
     private JPanel jpnView;
     private ThietBiService ThietBiService;
     private List<ThietBiBean> listThietBiBean;
     private ClassTableModel classTableModel;
     private final String[] COLUMNS = {"Mã TB", "Tên TB", "Trạng thái", "Ngày thêm"};
 
-    public ThongKePanelController(JPanel jpnView) {
+    public ThongKePanelController(JPanel jpnView,JComboBox TrangThaiJcb) {
+        this.TrangThaiJcb = TrangThaiJcb;
         this.jpnView = jpnView;
         this.ThietBiService = new ThietBiService();
         this.listThietBiBean = new ArrayList<>();
@@ -47,7 +48,8 @@ public class ThongKePanelController {
     }
 
     public void setData() {
-        this.listThietBiBean = this.ThietBiService.statisticThietBi();
+        String TrangThai = StringService.covertToString((String)this.TrangThaiJcb.getSelectedItem());
+        this.listThietBiBean = this.ThietBiService.statisticThietBi(TrangThai);
         setDataTable();
     }
     
@@ -80,6 +82,13 @@ public class ThongKePanelController {
         jpnView.add(scroll);
         jpnView.validate();
         jpnView.repaint();
+    }
+    public JComboBox TrangThaiJcb() {
+        return TrangThaiJcb;
+    }
+
+    public void TrangThaiJcb(JComboBox TrangThaiJcb) {
+        this.TrangThaiJcb = TrangThaiJcb;
     }
     
     

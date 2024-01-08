@@ -30,10 +30,49 @@ public class ThoiKhoaBieuPanelController {
     private final String COLUNMS[] = {"Mã lớp", "Mã giảng viên", "Thời gian bắt đầu", "Thời gian kết thúc"};
     private JFrame parentJFrame;
     
-    public ThoiKhoaBieuPanelController(JPanel tableJpn){
+    public ThoiKhoaBieuPanelController(JTextField searchJtf,JPanel tableJpn){
         this.tableJpn = tableJpn;
+        this.searchJtf = searchJtf;
         this.list = thoiKhoaBieuService.getListThoiKhoaBieu();
         setData();
+        initAction();
+    }
+    
+    public void initAction() {
+        this.searchJtf.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                String key = searchJtf.getText().trim();
+                if (key.isEmpty()) {
+                    list = thoiKhoaBieuService.getListThoiKhoaBieu();
+                } else {    
+                    list = thoiKhoaBieuService.search(key);
+                }
+                setData();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                String key = searchJtf.getText().trim();
+                if (key.isEmpty()) {
+                    list = thoiKhoaBieuService.getListThoiKhoaBieu();
+                } else {
+                    list = thoiKhoaBieuService.search(key);
+                }
+                setData();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                String key = searchJtf.getText().trim();
+                if (key.isEmpty()) {
+                    list = thoiKhoaBieuService.getListThoiKhoaBieu();
+                } else {
+                    list = thoiKhoaBieuService.search(key);
+                }
+                setData();
+            }
+        });
     }
     
     public void setData(){
@@ -85,6 +124,14 @@ public class ThoiKhoaBieuPanelController {
     
     public void setList(List<ThoiKhoaBieuBean> list) {
         this.list = list;
+    }
+    
+    public JTextField getSearchJtf() {
+        return searchJtf;
+    }
+
+    public void setSearchJtf(JTextField searchJtf) {
+        this.searchJtf = searchJtf;
     }
 
     public JPanel getTableJpn() {
