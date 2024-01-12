@@ -1,5 +1,4 @@
-
-    package Bean;
+package Bean;
 
 import java.util.ArrayList;
 import java.util.List;

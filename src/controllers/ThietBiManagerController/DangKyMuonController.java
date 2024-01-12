@@ -8,10 +8,8 @@ import javax.swing.JOptionPane;
 import services.MysqlConnection;
 import models.lich_muon;
 import models.thiet_bi;
-/**
- *
- * @author Hai
- */
+
+
 public class DangKyMuonController {
     
     public String checkMaTB(String cmt) {
@@ -33,7 +31,7 @@ public class DangKyMuonController {
     
 
     
-    public int checkMaLop(String MaLop) {
+    public String checkMaLop(String MaLop) {
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             String query = "SELECT * FROM tkb WHERE MaLop = ?";
@@ -41,24 +39,25 @@ public class DangKyMuonController {
             preparedStatement.setString(1, MaLop);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
-                return rs.getInt("MaLop");
+                return rs.getString("MaLop");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Có lỗi xảy ra! vui lòng kiểm tra lại.", "Warning!!", JOptionPane.WARNING_MESSAGE);
         }
-        return -1;
+        return null ;
     }
     
     public boolean addNew(lich_muon muon) {
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
-            String query = "INSERT INTO lich_muon(MaTB, NgayMuon, NgayTra)" + " value (?, ?, ?)";
+            String query = "INSERT INTO lich_muon(MaTB, NgayMuon, NgayTra, MaLop)" + " value (?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, muon.getMaTB());
             Date ngayMuon = new Date(muon.getNgayMuon().getTime());
             preparedStatement.setDate(2, ngayMuon);
             Date ngayTra = new Date(muon.getNgayTra().getTime());
             preparedStatement.setDate(3, ngayTra);
+            preparedStatement.setString(4,muon.getMaLop());
             preparedStatement.execute();
             preparedStatement.close();
             connection.close();

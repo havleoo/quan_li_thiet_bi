@@ -1,4 +1,3 @@
-
 package controllers;
 
 import Bean.ThoiKhoaBieuBean;
@@ -27,7 +26,7 @@ public class ThoiKhoaBieuPanelController {
     private JPanel tableJpn;
     private final ThoiKhoaBieuService thoiKhoaBieuService = new ThoiKhoaBieuService();
     private final TableModelThoiKhoaBieu tableModelAll = new TableModelThoiKhoaBieu();
-    private final String COLUNMS[] = {"Mã lớp", "Mã giảng viên", "Thời gian bắt đầu", "Thời gian kết thúc"};
+    private final String COLUNMS[] = {"Mã lớp", "Mã giảng viên", "Thời gian bắt đầu", "Thời gian kết thúc", "Mã thiết bị mượn"};
     private JFrame parentJFrame;
     
     public ThoiKhoaBieuPanelController(JTextField searchJtf,JPanel tableJpn){

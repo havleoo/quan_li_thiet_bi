@@ -1,8 +1,5 @@
 package utility;
 
-
-
-
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import Bean.ThoiKhoaBieuBean;
@@ -18,7 +15,7 @@ public class TableModelThoiKhoaBieu {
             }
             @Override
             public Class<?> getColumnClass(int columnIndex) {
-                return columnIndex == 4 ? Boolean.class : String.class;
+                return columnIndex == 5 ? Boolean.class : String.class;
             }  
         };
         dtm.setColumnIdentifiers(listColumn);
@@ -29,6 +26,7 @@ public class TableModelThoiKhoaBieu {
             obj[1] = item.getGvien().getMaGV();
             obj[2] = item.gettkb().getTgBatDau();
             obj[3] = item.gettkb().getTgKetThuc();
+            obj[4] = item.getLichmuon().getMaTB();
             dtm.addRow(obj);
     });
         return dtm;

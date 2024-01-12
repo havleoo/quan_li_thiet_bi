@@ -10,15 +10,8 @@ import java.sql.Statement;
 import models.thiet_bi;
 import services.MysqlConnection;
 
-/**
- *
- * @author Hai
- */
-
-// lop thuc hien cac chuc nang trong giao dien them moi nhan khau
-
 public class ThemThietBiController {
-    public boolean addNewPeople(ThietBiBean ThietBiBean) throws SQLException, ClassNotFoundException{
+    public boolean addThietBi(ThietBiBean ThietBiBean) throws SQLException, ClassNotFoundException{
         thiet_bi thiet_bi = ThietBiBean.getthiet_bi();
         //ChungMinhThuModel chungMinhThu = nhanKhauBean.getChungMinhThuModel();
         Connection connection = MysqlConnection.getMysqlConnection();

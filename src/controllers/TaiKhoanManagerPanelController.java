@@ -10,10 +10,8 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import models.tt_dang_nhap;
 import services.TaiKhoanService;
-/**
- *
- * @author LENOVO
- */
+
+
 public class TaiKhoanManagerPanelController {
     public static tt_dang_nhap currentUser = new tt_dang_nhap();
     public static String TenDN;

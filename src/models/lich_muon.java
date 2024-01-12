@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package models;
 
 import java.util.Date;
 
-/**
- *
- * @author huy
- */
 public class lich_muon {
 
     public String getMaTB() {
@@ -35,9 +27,21 @@ public class lich_muon {
     public void setNgayTra(Date ngayTra) {
         this.ngayTra = ngayTra;
     }
+
+    public String getMaLop() {
+        return maLop;
+    }
+
+    public void setMaLop(String maLop) {
+        this.maLop = maLop;
+    }
+    
+        
+    
     private String maTB;
     private Date ngayMuon;
     private Date ngayTra;
+    private String maLop;
     
     
 }

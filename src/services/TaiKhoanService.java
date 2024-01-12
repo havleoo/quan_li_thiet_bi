@@ -13,10 +13,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import models.tt_dang_nhap;
 
-/**
- *
- * @author Hai
- */
 public class TaiKhoanService {
     // them moi ho khau
     public static boolean DoiMK(String TenDN,String MatKhauMoi) throws ClassNotFoundException, SQLException{

@@ -1,7 +1,3 @@
-/*
- * lớp xử lý sự kiện chuyển qua lại giữa các màn hình tại mainFrame
- * tạo ra các hiệu ứng lựa chọn các label
- */
 package controllers;
 
 import Bean.DanhMucBean;
@@ -19,10 +15,6 @@ import views.ThoiKhoaBieuManagePanel;
 import views.ThietBiManagePanel;
 import views.TaiKhoanManagerPanel;
 
-/**
- *
- * @author Hai
- */
 public class MainController {
     private JFrame jfrMain;
     private JPanel root;
@@ -38,11 +30,10 @@ public class MainController {
     // set panel for root
     public void setView(JPanel jpnItem, JLabel jlbItem, String kind) {
         this.kindSelected = kind;
-        jpnItem.setBackground(new Color(0));
-        jlbItem.setBackground(new Color(0));
+        jpnItem.setBackground(new Color(153,204,255));
+        jlbItem.setBackground(new Color(153,204,255));
         JPanel view = new  JPanel();
         switch(kind) {
-                
                 case "TrangChu":
                     view = new HomePagePanel();
                     break;  
@@ -76,15 +67,15 @@ public class MainController {
             item.getJlb().addMouseListener(new LabelEvent(this.jfrMain, item.getKind(), item.getJpn(), item.getJlb()));
         });
     }
-    
+
     public void setDefaultColor() {
         this.listDanhMuc.forEach((item) -> {
             if (item.getKind().equals("TrangChu")) {
-                item.getJlb().setBackground(new Color(0, 160, 50));
-                item.getJpn().setBackground(new Color(0, 160, 50));
+                item.getJlb().setBackground(new Color(153,204,255));
+                item.getJpn().setBackground(new Color(153,204,255));
             } else {
-                item.getJlb().setBackground(new Color(102,102,102));
-                item.getJpn().setBackground(new Color(102,102,102));
+                item.getJlb().setBackground(new Color(153,204,255));
+                item.getJpn().setBackground(new Color(153,204,255));
             }
         });
     }
@@ -138,15 +129,15 @@ public class MainController {
             root.validate();
             root.repaint();
             setDefaultColor();
-            jlbItem.setBackground(new Color(0));
-            jpnItem.setBackground(new Color(0));
+            jlbItem.setBackground(new Color(51,153,255));
+            jpnItem.setBackground(new Color(51,153,255));
         }        
 
         @Override
         public void mousePressed(MouseEvent e) {
             kindSelected = kind;
-            jlbItem.setBackground(Color.BLACK);
-            jpnItem.setBackground(Color.BLACK);
+            jlbItem.setBackground(new Color(51,153,255));
+            jpnItem.setBackground(new Color(51,153,255));
         }
 
         @Override
@@ -155,20 +146,20 @@ public class MainController {
 
         @Override
         public void mouseEntered(MouseEvent e) {
-            jlbItem.setBackground(Color.BLACK);
-            jpnItem.setBackground(Color.BLACK);
+            jlbItem.setBackground(new Color(51,153,255));
+            jpnItem.setBackground(new Color(51,153,255));
         }
 
         @Override
         public void mouseExited(MouseEvent e) {
             if (!kind.equalsIgnoreCase(kindSelected)) {
                 if (kind.equals("TrangChu")) {
-                    jlbItem.setBackground(new Color(0, 160, 50));
-                    jpnItem.setBackground(new Color(0, 160, 50));
+                    jlbItem.setBackground(new Color(153,204,255));
+                    jpnItem.setBackground(new Color(153,204,255));
                 } else 
                 {
-                    jlbItem.setBackground(new Color(102,102,102));
-                    jpnItem.setBackground(new Color(102,102,102));
+                    jlbItem.setBackground(new Color(153,204,255));
+                    jpnItem.setBackground(new Color(153,204,255));
                 }
             }
         }

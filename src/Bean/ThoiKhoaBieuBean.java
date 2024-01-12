@@ -1,4 +1,3 @@
-
 package Bean;
 
 
@@ -6,22 +5,26 @@ import java.util.ArrayList;
 import java.util.List;
 import models.tkb;
 import models.gvien;
+import models.lich_muon;
 
 
 public class ThoiKhoaBieuBean {
         private tkb tkb;
         private gvien gvien;
+        private lich_muon lich_muon;
         private List<gvien> listgviens;
         
-        public ThoiKhoaBieuBean(tkb tkb, gvien gvien, List<gvien> listgviens){
+        public ThoiKhoaBieuBean(tkb tkb, gvien gvien,lich_muon lich_muon, List<gvien> listgviens){
             this.tkb = tkb;
             this.gvien = gvien;
+            this.lich_muon = lich_muon;
             this.listgviens = listgviens;
         }
         
         public ThoiKhoaBieuBean(){
             this.tkb = new tkb();
             this.gvien = new gvien();
+            this.lich_muon = new lich_muon();
             this.listgviens = new ArrayList<>(); 
         }
         
@@ -40,6 +43,14 @@ public class ThoiKhoaBieuBean {
 
     public void setGvien(gvien gvien) {
         this.gvien = gvien;
+    }
+    
+    public lich_muon getLichmuon() {
+        return lich_muon;
+    }
+
+    public void setLich_muon(lich_muon lich_muon) {
+        this.lich_muon = lich_muon;
     }
     
     public List<gvien> getListGviens() {

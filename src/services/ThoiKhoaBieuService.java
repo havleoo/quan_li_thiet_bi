@@ -1,5 +1,4 @@
-
-package services;
+    package services;
 
 import Bean.ThoiKhoaBieuBean;
 import java.sql.Connection;
@@ -14,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import models.tkb;
 import models.gvien;
+import models.lich_muon;
 
 public class ThoiKhoaBieuService {
     //lấy ra thời khóa biểu
@@ -22,7 +22,7 @@ public class ThoiKhoaBieuService {
         
         try{
             Connection connection = MysqlConnection.getMysqlConnection();
-            String query = "SELECT * FROM tkb INNER JOIN giang_vien ON tkb.MaGV = giang_vien.MaGV ORDER BY MaLop LIMIT 0, 10";
+            String query = "SELECT * FROM tkb  LEFT JOIN lich_muon ON lich_muon.MaLop = tkb.MaLop LEFT JOIN giang_vien ON tkb.MaGV = giang_vien.MaGV ORDER BY tkb.MaLop LIMIT 0, 10";
              PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
              ResultSet rs = preparedStatement.executeQuery();
              while (rs.next()){
@@ -40,6 +40,8 @@ public class ThoiKhoaBieuService {
                  gvien.setNgaySinh(rs.getTimestamp("NgaySinh"));
                  gvien.setGioiTinh(rs.getString("GioiTinh"));
                  gvien.setEmail(rs.getString("Email"));
+                 lich_muon lich_muon = temp.getLichmuon();
+                 lich_muon.setMaTB(rs.getString("MaTB"));
                  list.add(temp);
              }
              preparedStatement.close();
