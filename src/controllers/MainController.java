@@ -17,6 +17,7 @@ import views.HomePagePanel;
 import views.ThongKePanel;
 import views.ThoiKhoaBieuManagePanel;
 import views.ThietBiManagePanel;
+import views.TaiKhoanManagerPanel;
 
 /**
  *
@@ -53,6 +54,9 @@ public class MainController {
                     break;
                 case "ThongKe":
                     view = new ThongKePanel(this.jfrMain);
+                    break;
+                case "TaiKhoan":
+                    view = new TaiKhoanManagerPanel(this.jfrMain);
                     break;
                 //any more
                 default:
@@ -120,6 +124,9 @@ public class MainController {
                     break;
                 case "ThongKe":
                     view = new ThongKePanel(this.jfrMain);
+                    break;
+                case "TaiKhoan":
+                    view = new TaiKhoanManagerPanel(this.jfrMain);
                     break;
                 default:
                     break;

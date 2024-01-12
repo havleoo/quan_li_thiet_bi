@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import models.tt_dang_nhap;
+
 import services.MysqlConnection;
 
 /**
@@ -15,7 +16,7 @@ import services.MysqlConnection;
 public class LoginController {
     
     public static tt_dang_nhap currentUser = new tt_dang_nhap();
-    
+  
     public boolean login(String TenDN, String MatKhau) throws SQLException, ClassNotFoundException{
         Connection connection = MysqlConnection.getMysqlConnection();
         Statement st = connection.createStatement();
@@ -27,10 +28,15 @@ public class LoginController {
             if (rs.getString("MatKhau") == null ? MatKhau == null : rs.getString("MatKhau").equals(MatKhau)) {
                 LoginController.currentUser.setID(rs.getString("ID"));
                 LoginController.currentUser.setTenDN(rs.getString("TenDN"));
+                TaiKhoanManagerPanelController.setTenDN(rs.getString("TenDN")) ;
                 return true;
             }
         }
         connection.close();
         return false;
     }
+
+   
+    
+    
 }

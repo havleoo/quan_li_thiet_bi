@@ -53,7 +53,7 @@ public class HomePagePanel extends javax.swing.JPanel {
 
         tongThietBiLbLb.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         tongThietBiLbLb.setForeground(new java.awt.Color(255, 255, 255));
-        tongThietBiLbLb.setText("1000");
+        tongThietBiLbLb.setText("N");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
